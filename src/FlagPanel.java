@@ -63,53 +63,51 @@ public class FlagPanel extends JPanel {
         drawStars(g);
     }
 
+    // this function draws a white background
     private void drawBackground(Graphics g) {
         g.setColor(WHITE);
         g.fillRect(0, 0, (int) flag_fly, (int) flag_width);
     }
 
+    // this function draws red stripes over the white background
     public void drawStripes(Graphics g) {
         g.setColor(RED);
-
         for (int i = 0; i < 7; i++) {
             g.fillRect(0, (int) (i * 2 * L * flag_width), (int) (B * flag_width), (int) (L * flag_width));
-
         }
-
     }
 
+    // this function draws the blue portion of the flag
     public void drawField(Graphics g) {
         g.setColor(BLUE);
         g.fillRect(0, 0, (int) (D * flag_width), (int) (C * flag_width));
-
     }
 
+    // this function draws the pattern of stars on the blue rectangle
     public void drawStars(Graphics g) {
         g.setColor(WHITE);
+        // first iterate over columns - there are 11 of them
         for (int i = 1; i <= 11; i++) {
             int x = (int) (H * flag_width * i);
             if (i % 2 == 1) {
-
+                // this means i odd
                 for (int k = 1; k <= 6; k++) {
                     int y = (int) (F * flag_width * (2 * k - 1));
                     drawStar(g, x, y, (K / 2 * flag_width));
                 }
-
             } else {
+                // this means i is even
                 for (int j = 1; j <= 4; j++) {
                     int y = (int) (F * flag_width * ((2 * j)));
                     System.out.println("y: " + y);
                     drawStar(g, x, y, (K / 2 * flag_width));
-
                 }
-
             }
         }
 
     }
     
     // this portion of the code was copied from paleyontology.com, the rest is my original work
-
     public void drawStar(Graphics g, int centerX, int centerY, double radius) { 
         /*
          * To produce a polygon that looks like a star, a little trig...
