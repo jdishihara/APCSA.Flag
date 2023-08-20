@@ -107,8 +107,10 @@ public class FlagPanel extends JPanel {
         }
 
     }
+    
+    // this portion of the code was copied from paleyontology.com, the rest is my original work
 
-    public void drawStar(Graphics g, int centerX, int centerY, double radius) {
+    public void drawStar(Graphics g, int centerX, int centerY, double radius) { 
         /*
          * To produce a polygon that looks like a star, a little trig...
          * 
