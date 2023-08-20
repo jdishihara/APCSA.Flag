@@ -87,7 +87,8 @@ public class FlagPanel extends JPanel {
     public void drawStars(Graphics g) {
         g.setColor(WHITE);
         // first iterate over columns - there are 11 of them
-        for (int i = 1; i <= 11; i++) {
+        int numColums = 11;
+        for (int i = 1; i <= numColums; i++) {
             int x = (int) (H * flag_width * i);
             if (i % 2 == 1) {
                 // this means i odd
